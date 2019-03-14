@@ -44,3 +44,9 @@ So it is supposed to update the repPhone where the repPhone is 12345678 but it o
 
 ## Ex4
 ![Query execution plan](https://raw.githubusercontent.com/OnkelDunkel/dbassignment7/master/b%2B%20tree%20diagram.png)
+
+### Explain how the index is used to find "Handji Gifts& Co" - that is, the path through the tree to get to the right row.
+* At first following are compared in terms of alphabetic order: 'Australian Collectors, Co.', 'Down Under Souveniers, Inc', 'GiftsForHim.com'.
+* Since H comes after 'GiftsForHim.com' we then take a look at the last branch.
+* We find 'GiftsForHim.com' and get the row index
+* We get the value from the table index
