@@ -24,6 +24,22 @@ I would use the customerName and the contactPhone as a primary key because both 
 
 ### 3.1: Write a safe update statement that change the repPhone column from oldNumber (say 12345678) to newNumber (say 87654321).
 
+    USE classicmodels;
+    START TRANSACTION;
+
+    UPDATE CustomerOverview SET repPhone="87654321"
+    WHERE repPhone="12345678";
+
+    COMMIT;
+
+The statement uses a transaction which disables MySQLs autocommit and rolls back the changes if something goes wrong before the transaction is committed.
+
 ### 3.2: Write an update of repEmail which do not update properly (do not update it everywhere it should)
+
+    USE classicmodels;
+    UPDATE CustomerOverview SET repPhone="87654321"
+    WHERE repPhone="12345678" LIMIT 1;
+
+So it is supposed to update the repPhone where the repPhone is 12345678 but it only updates the first row that meets that condition. The statement is also not atomic.
 
 ## Ex4
