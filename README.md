@@ -43,3 +43,4 @@ The statement uses a transaction which disables MySQLs autocommit and rolls back
 So it is supposed to update the repPhone where the repPhone is 12345678 but it only updates the first row that meets that condition. The statement is also not atomic.
 
 ## Ex4
+![Query execution plan](https://raw.githubusercontent.com/OnkelDunkel/dbassignment7/master/b%2B%20tree%20diagram.png)
